@@ -1,37 +1,23 @@
-@import "../styles/dummy.css";
-
-
+/* Tailwind 기본 지시문 */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* 라이트 모드 전용 (시뮬레이션 프로젝트) */
+/* 라이트 모드 전용 변수 (다크모드 고정) */
 :root {
   --background: #fafafa;
   --foreground: #1f2937;
   --primary: #8b5cf6;
   --secondary: #ec4899;
   --accent: #3b82f6;
-}
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
   --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
-}
-
-/* 다크모드 비활성화 (라이트 모드 고정) */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #fafafa;
-    --foreground: #1f2937;
-  }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+  font-family: var(--font-sans);
   margin: 0;
   padding: 0;
 }
@@ -41,17 +27,14 @@ body {
   width: 10px;
   height: 10px;
 }
-
 ::-webkit-scrollbar-track {
   background: #f1f5f9;
   border-radius: 10px;
 }
-
 ::-webkit-scrollbar-thumb {
   background: #cbd5e1;
   border-radius: 10px;
 }
-
 ::-webkit-scrollbar-thumb:hover {
   background: #94a3b8;
 }
@@ -65,56 +48,41 @@ input[type="range"] {
   border-radius: 6px;
   outline: none;
 }
-
 input[type="range"]::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
   width: 24px;
   height: 24px;
   border-radius: 50%;
-  background: #8b5cf6;
+  background: var(--primary);
   cursor: pointer;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   transition: all 0.2s;
 }
-
 input[type="range"]::-webkit-slider-thumb:hover {
-  background: #7c3aed;
+  background: var(--secondary);
   transform: scale(1.1);
 }
-
 input[type="range"]::-moz-range-thumb {
   width: 24px;
   height: 24px;
   border-radius: 50%;
-  background: #8b5cf6;
+  background: var(--primary);
   cursor: pointer;
   border: none;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   transition: all 0.2s;
 }
-
 input[type="range"]::-moz-range-thumb:hover {
-  background: #7c3aed;
+  background: var(--secondary);
   transform: scale(1.1);
 }
 
-/* 카드 플립 애니메이션을 위한 스타일 */
-.perspective-1000 {
-  perspective: 1000px;
-}
-
-.transform-style-3d {
-  transform-style: preserve-3d;
-}
-
-.backface-hidden {
-  backface-visibility: hidden;
-}
-
-.rotate-y-180 {
-  transform: rotateY(180deg);
-}
+/* 카드 플립 애니메이션 */
+.perspective-1000 { perspective: 1000px; }
+.transform-style-3d { transform-style: preserve-3d; }
+.backface-hidden { backface-visibility: hidden; }
+.rotate-y-180 { transform: rotateY(180deg); }
 
 /* 부드러운 전환 효과 */
 * {
@@ -123,18 +91,10 @@ input[type="range"]::-moz-range-thumb:hover {
   transition-duration: 150ms;
 }
 
-/* 링크 호버 효과 */
-a {
-  color: var(--primary);
-  text-decoration: none;
-  transition: color 0.2s;
-}
+/* 링크 & 버튼 */
+a { color: var(--primary); text-decoration: none; transition: color 0.2s; }
+a:hover { color: var(--secondary); }
 
-a:hover {
-  color: var(--secondary);
-}
-
-/* 버튼 포커스 스타일 */
 button:focus-visible,
 input:focus-visible,
 select:focus-visible,
@@ -145,29 +105,13 @@ textarea:focus-visible {
 
 /* 애니메이션 */
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
-
-.fade-in {
-  animation: fadeIn 0.5s ease-out;
-}
+.fade-in { animation: fadeIn 0.5s ease-out; }
 
 /* 프린트 스타일 */
 @media print {
-  body {
-    background: white;
-    color: black;
-  }
-  
-  button,
-  .no-print {
-    display: none;
-  }
+  body { background: white; color: black; }
+  button, .no-print { display: none; }
 }
