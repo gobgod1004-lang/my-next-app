@@ -9,7 +9,7 @@ export default function SimulationSelection() {
       icon: '🍜',
       title: '라면 조리 시간과 맛의 변화',
       description: '조리 시간에 따라 라면의 맛이 어떻게 변하는지 체험해보세요',
-      link: '/simulations/Sim1',
+      link: '/simulations/sim1',
       color: 'from-yellow-400 to-orange-500'
     },
     {
@@ -17,7 +17,7 @@ export default function SimulationSelection() {
       icon: '🧂',
       title: '소금의 양과 짠맛 강도',
       description: '소고기 뭇국에 소금을 넣어 간을 맞춰보세요',
-      link: '/simulations/Sim2',
+      link: '/simulations/sim2',
       color: 'from-amber-400 to-orange-600'
     },
     {
@@ -25,7 +25,7 @@ export default function SimulationSelection() {
       icon: '🧬',
       title: '코돈과 아미노산',
       description: '3개의 염기를 조합하여 아미노산을 만들어보세요',
-      link: '/simulations/Sim3',
+      link: '/simulations/sim3',
       color: 'from-indigo-400 to-purple-600'
     },
     {
@@ -33,7 +33,7 @@ export default function SimulationSelection() {
       icon: '🦠',
       title: '세포막 물질 이동',
       description: '물질의 이동 방식에 따른 속도 변화를 관찰해보세요',
-      link: '/simulations/Sim4',
+      link: '/simulations/sim4',
       color: 'from-cyan-400 to-blue-600'
     },
     {
@@ -41,7 +41,7 @@ export default function SimulationSelection() {
       icon: '🐕',
       title: '강아지 성장과 사료량',
       description: '주령에 따른 강아지 사료량 변화를 확인해보세요',
-      link: '/simulations/Sim5',
+      link: '/simulations/sim5',
       color: 'from-blue-400 to-purple-600'
     },
     {
@@ -49,7 +49,7 @@ export default function SimulationSelection() {
       icon: '🐾',
       title: '강아지 견종별 운동량',
       description: '견종별 하루 권장 운동 시간을 알아보세요',
-      link: '/simulations/Sim6',
+      link: '/simulations/sim6',
       color: 'from-purple-400 to-pink-600'
     }
   ];
